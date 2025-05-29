@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Chỉnh sửa thông tin</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Chỉnh sửa thông tin</h2>
+        <form method="post" enctype="multipart/form-data">
+            <label>Họ tên:</label>
+            <input name="fullname" value="{{ user[4] }}">
+
+            <label>Email:</label>
+            <input name="email" value="{{ user[3] }}">
+
+            <label>SĐT:</label>
+            <input name="phone" value="{{ user[5] }}">
+
+            <label>Ảnh đại diện (chọn file mới nếu muốn):</label>
+            <input type="file" name="avatar_file">
+
+            <label>Giới thiệu:</label>
+            <textarea name="bio">{{ user[7] }}</textarea>
+
+            <button type="submit">Lưu</button>
+        </form>
+        <a href="{{ url_for('profile') }}">Quay lại</a>
+    </div>
+</body>
+</html>

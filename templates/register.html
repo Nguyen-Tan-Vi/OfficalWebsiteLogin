@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Đăng Ký</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Đăng ký</h2>
+        <form method="post" enctype="multipart/form-data">
+            <label>Username:</label>
+            <input type="text" name="username" required>
+
+            <label>Password:</label>
+            <input type="password" name="password" required>
+
+            <label>Email:</label>
+            <input type="email" name="email">
+
+            <label>Họ tên:</label>
+            <input type="text" name="fullname">
+
+            <label>SĐT:</label>
+            <input type="text" name="phone">
+
+            <label>Ảnh đại diện (file):</label>
+            <input type="file" name="avatar_file">
+
+            <label>Giới thiệu:</label>
+            <textarea name="bio"></textarea>
+
+            <button type="submit">Đăng ký</button>
+        </form>
+        <a href="{{ url_for('login') }}">Đã có tài khoản? Đăng nhập</a>
+    </div>
+</body>
+</html>

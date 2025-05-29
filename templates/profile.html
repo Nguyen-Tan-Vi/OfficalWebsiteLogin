@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Thông tin cá nhân</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Thông tin cá nhân</h2>
+        {% if user[6] %}
+        <img src="{{ url_for('avatar_file', filename=user[6]) }}" width="100" height="100" style="border-radius: 50%;"><br><br>
+        {% endif %}
+        Họ tên: {{ user[4] }}<br>
+        Email: {{ user[3] }}<br>
+        SĐT: {{ user[5] }}<br>
+        Giới thiệu: {{ user[7] }}<br><br>
+
+        <a href="{{ url_for('edit_profile') }}"><button>Chỉnh sửa</button></a>
+        <a href="{{ url_for('logout') }}"><button>Đăng xuất</button></a>
+    </div>
+</body>
+</html>
